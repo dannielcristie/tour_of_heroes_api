@@ -1,56 +1,53 @@
-# Module API
-module Api
-  # class constroller HeroesController
-  class HeroesController < ApplicationController
-    before_action :set_hero, only: %i[show update destroy]
+# HeroesController
+class Api::HeroesController < ApplicationController
+  before_action :set_hero, only: %i[show update destroy]
 
-    # GET /heroes
-    def index
-      @heroes = Hero.all.sorted_by_name
+  # GET /heroes
+  def index
+    @heroes = Hero.all.sorted_by_name
 
-      render json: @heroes
+    render json: @heroes
+  end
+
+  # GET /heroes/1
+  def show
+    render json: @hero
+  end
+
+  # POST /heroes
+  def create
+    @hero = Hero.new(hero_params)
+
+    if @hero.save
+      render json: @hero, status: :created, location: @hero_url
+    else
+      render json: @hero.errors, status: :unprocessable_entity
     end
+  end
 
-    # GET /heroes/1
-    def show
+  # PATCH/PUT /heroes/1
+  def update
+    if @hero.update(hero_params)
       render json: @hero
+    else
+      render json: @hero.errors, status: :unprocessable_entity
     end
+  end
 
-    # POST /heroes
-    def create
-      @hero = Hero.new(hero_params)
+  # DELETE /heroes/1
+  def destroy
+    @hero.destroy
+  end
 
-      if @hero.save
-        render json: @hero, status: :created, location: @hero_url
-      else
-        render json: @hero.errors, status: :unprocessable_entity
-      end
-    end
+  private
 
-    # PATCH/PUT /heroes/1
-    def update
-      if @hero.update(hero_params)
-        render json: @hero
-      else
-        render json: @hero.errors, status: :unprocessable_entity
-      end
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hero
+    @hero = Hero.find(params[:id])
+  end
 
-    # DELETE /heroes/1
-    def destroy
-      @hero.destroy
-    end
-
-    private
-
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hero
-      @hero = Hero.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def hero_params
-      params.require(:hero).permit(:name)
-    end
+  # Only allow a list of trusted parameters through.
+  def hero_params
+    params.require(:hero).permit(:name)
   end
 end
