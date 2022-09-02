@@ -206,7 +206,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -231,9 +231,9 @@
           1,
           1,
           null,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
           null
         ]
       },
@@ -244,8 +244,113 @@
           1,
           null
         ]
+      },
+      "/home/cristie/Desktop/Projects/Ruby/tour_of_heroes_api/spec/routing/heroes_routing_spec.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          null
+        ]
+      },
+      "/home/cristie/Desktop/Projects/Ruby/tour_of_heroes_api/app/controllers/api/heroes_controller.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/cristie/Desktop/Projects/Ruby/tour_of_heroes_api/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/cristie/Desktop/Projects/Ruby/tour_of_heroes_api/app/controllers/concerns/authenticable.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1662142628
+    "timestamp": 1662157142
   }
 }
