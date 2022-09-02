@@ -9,7 +9,6 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "active_model_serializers", "~> 0.10.13"
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "net-smtp"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -26,3 +25,9 @@ group :production do
   gem "pg", "~> 1.4"
 end
 gem "thin", "~> 1.8"
+
+
+
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
