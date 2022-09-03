@@ -10,6 +10,8 @@ gem "active_model_serializers", "~> 0.10.13"
 gem "rack-cors", "~> 1.1"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'rubocop', require: false
+
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
