@@ -2,9 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe Hero, type: :model do
-  let(:name) { 'Thor' }
-  let(:token) { '1234567890' }
-  subject { Hero.new(name:, token:) }
+  subject(:hero) { build :hero }
+
   describe 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:token) }
@@ -15,11 +14,11 @@ RSpec.describe Hero, type: :model do
 
   describe 'scopes' do
     it '.by_token' do
-      expect(Hero.where(token:).to_sql).to eq Hero.by_token(token).to_sql
+      expect(Hero.where(token: hero.token).to_sql).to eq Hero.by_token(hero.token).to_sql
     end
 
     it '.search' do
-      expect(Hero.where('LOWER(name) LIKE ?', "%#{name.downcase}%").to_sql).to eq Hero.search(name).to_sql
+      expect(Hero.where('LOWER(name) LIKE ?', "%#{hero.name.downcase}%").to_sql).to eq Hero.search(hero.name).to_sql
     end
 
     it '.sorted_by_name' do
