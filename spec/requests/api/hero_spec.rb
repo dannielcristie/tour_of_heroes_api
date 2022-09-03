@@ -26,7 +26,6 @@ RSpec.describe '/api/heroes', type: :request do
 
     context 'without headers' do
       it 'renders a a JSON response with an unauthorized status' do
-        Hero.create! valid_attributes
         get api_heroes_url, as: :json
         expect(response).to have_http_status(:unauthorized)
       end
@@ -34,7 +33,6 @@ RSpec.describe '/api/heroes', type: :request do
 
     context 'without invalid headers' do
       it 'renders a a JSON response with an unauthorized status' do
-        Hero.create! valid_attributes
         get api_heroes_url, headers: invalid_headers, as: :json
         expect(response).to have_http_status(:unauthorized)
       end
