@@ -50,6 +50,9 @@ rails s
 The backend is available at `http://localhost:3000`.
 
 ## Tests
+
+![Tests](https://github.com/dannielcristie/tour_of_heroes_api/actions/workflows/ruby.yml/badge.svg)
+
 To run the tests:
 
 ```bash
