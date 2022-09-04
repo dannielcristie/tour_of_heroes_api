@@ -9,6 +9,7 @@ RSpec.describe Hero, type: :model do
     it { should validate_presence_of(:token) }
 
     it { should validate_length_of(:token).is_at_least(10) }
+
     it { should validate_uniqueness_of(:name).scoped_to(:token).case_insensitive }
   end
 
